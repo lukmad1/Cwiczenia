@@ -11,14 +11,16 @@ public class Main {
             numberArray[i] = scanner.nextInt();
         }
 
+        removeDuped(numberArray);
+    }
+
+    private static void removeDuped(int[] numberArray) {
         for (int i = 0; i < numberArray.length; i++) {
-            boolean print = false;
-            for (int j = 0; j < numberArray.length; j++) {
-                if (numberArray[i] == numberArray[j] && i != j && i < j) {
+            boolean print = true;
+            for (int j = i+1; j < numberArray.length; j++) {
+                if (numberArray[i] == numberArray[j]) {
                     print = false;
                     break;
-                } else {
-                    print = true;
                 }
             }
             if (print){
